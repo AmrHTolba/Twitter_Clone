@@ -9,7 +9,41 @@ import SwiftUI
 
 struct SideMenuView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack(alignment: .leading, spacing: 26) {
+            VStack(alignment: .leading) {
+                Circle()
+                    .frame(width: 48, height: 48)
+                
+                VStack(alignment: .leading) {
+                    Text("Amr Hesham")
+                        .font(.headline)
+                    
+                    Text("@amrhdev")
+                        .font(.caption)
+                        .foregroundStyle(.gray)
+                }
+                UserStatsView()
+                    .padding(.vertical, 2)
+            }
+            
+            ForEach(SideMenuViewModel.allCases, id: \.rawValue) { option in
+                HStack(spacing: 16) {
+                    Image(systemName: option.imageName)
+                        .font(.headline)
+                        .foregroundStyle(.gray)
+                    
+                    Text(option.description)
+                        .font(.subheadline)
+                    
+                    Spacer()
+                }
+                .frame(height: 40)
+                
+            }
+            Spacer()
+        }
+        .padding(.horizontal)
     }
 }
 
