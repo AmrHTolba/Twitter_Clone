@@ -19,7 +19,7 @@ struct ExploreView: View {
                             } label: {
                                 UserRowView()
                             }
-                            
+                            Divider()
                         }
                     }
                 }
