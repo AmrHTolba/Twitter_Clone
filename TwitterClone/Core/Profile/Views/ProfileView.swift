@@ -74,7 +74,7 @@ extension ProfileView {
                     .font(.subheadline).bold()
                     .frame(width: 120,height: 32)
                     .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.gray, lineWidth: 0.75))
-                    .foregroundStyle(.primary)
+                    
             }
         }
         .padding(.trailing,20)

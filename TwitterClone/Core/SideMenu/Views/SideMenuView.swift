@@ -34,7 +34,7 @@ struct SideMenuView: View {
                     } label: {
                         SideMenuRowView(viewModel: viewModel)
                     }
-                    .blackNavigationLink()
+                    .blackNavLink()
                 } else if viewModel == .bookmarks {
                     SideMenuRowView(viewModel: viewModel)
                 } else if viewModel == .lists {

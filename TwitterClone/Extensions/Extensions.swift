@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-extension NavigationLink {
-    func blackNavigationLink() -> some View {
+extension View {
+    func blackNavLink() -> some View {
         self
             .foregroundStyle(.primary)
     }
 }
+
