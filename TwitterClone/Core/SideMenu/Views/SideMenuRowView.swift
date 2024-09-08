@@ -8,13 +8,23 @@
 import SwiftUI
 
 struct SideMenuRowView: View {
+    let viewModel: SideMenuViewModel
+    
     var body: some View {
-        HStack {
+        HStack(spacing: 16) {
+            Image(systemName: viewModel.imageName)
+                .font(.headline)
             
+            Text(viewModel.description)
+                .font(.subheadline)
+                .bold()
+            
+            Spacer()
         }
+        .frame(height: 40)
     }
 }
 
 #Preview {
-    SideMenuRowView()
+    SideMenuRowView(viewModel: .profile)
 }

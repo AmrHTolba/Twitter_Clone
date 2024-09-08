@@ -27,18 +27,21 @@ struct SideMenuView: View {
                     .padding(.vertical, 2)
             }
             
-            ForEach(SideMenuViewModel.allCases, id: \.rawValue) { option in
-                HStack(spacing: 16) {
-                    Image(systemName: option.imageName)
-                        .font(.headline)
-                    
-                    Text(option.description)
-                        .font(.subheadline)
-                        .bold()
-                    
-                    Spacer()
+            ForEach(SideMenuViewModel.allCases, id: \.rawValue) { viewModel in
+                if viewModel == .profile {
+                    NavigationLink {
+                        ProfileView()
+                    } label: {
+                        SideMenuRowView(viewModel: viewModel)
+                    }
+                    .blackNavigationLink()
+                } else if viewModel == .bookmarks {
+                    SideMenuRowView(viewModel: viewModel)
+                } else if viewModel == .lists {
+                    SideMenuRowView(viewModel: viewModel)
+                } else {
+                    SideMenuRowView(viewModel: viewModel)
                 }
-                .frame(height: 40)
                 
             }
             Spacer()
@@ -47,6 +50,9 @@ struct SideMenuView: View {
     }
 }
 
+// MARK: - Preview
+
 #Preview {
     SideMenuView()
 }
+
