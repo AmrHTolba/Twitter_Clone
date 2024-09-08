@@ -31,7 +31,7 @@ struct ContentView: View {
                 SideMenuView()
                     .frame(width: 300)
                     .offset(x: showMenu ? 0 : -300)
-                    .background(showMenu ? .white : .clear)
+                    .background(showMenu ? Color(.systemBackground) : .clear)
             }
             .navigationTitle("Home")
             .navigationBarTitleDisplayMode(.inline)
@@ -47,6 +47,9 @@ struct ContentView: View {
                                 .frame(width: 32, height: 32)
                         }
                 }
+            }
+            .onAppear {
+                showMenu = false
             }
         }
     }

@@ -74,7 +74,7 @@ extension ProfileView {
                     .font(.subheadline).bold()
                     .frame(width: 120,height: 32)
                     .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.gray, lineWidth: 0.75))
-                    .foregroundStyle(.black)
+                    .foregroundStyle(.primary)
             }
         }
         .padding(.trailing,20)
@@ -135,7 +135,7 @@ extension ProfileView {
                     Text(item.title)
                         .font(.subheadline)
                         .fontWeight(selectedFilter == item ? .semibold : .regular)
-                        .foregroundStyle(selectedFilter == item ? .black : .gray)
+                        .foregroundStyle(selectedFilter == item ? .primary : .secondary)
                     
                     if selectedFilter == item {
                         Capsule()
