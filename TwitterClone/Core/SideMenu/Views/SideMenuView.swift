@@ -39,11 +39,17 @@ struct SideMenuView: View {
                     SideMenuRowView(viewModel: viewModel)
                 } else if viewModel == .lists {
                     SideMenuRowView(viewModel: viewModel)
+                } else if viewModel == .logout{
+                    Button {
+                        print("Handle Logout here")
+                    } label: {
+                        SideMenuRowView(viewModel: viewModel)
+                    }
                 } else {
-                    SideMenuRowView(viewModel: viewModel)
+                    
                 }
-                
             }
+            .foregroundStyle(.primary)
             Spacer()
         }
         .padding(.horizontal)
